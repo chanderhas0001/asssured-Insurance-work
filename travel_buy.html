@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Travel Insurance Form</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI',sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px 20px;
+      background:
+      linear-gradient(rgba(15,23,42,0.8),rgba(37,99,235,0.75)),
+      url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .form-container{
+      width:100%;
+      max-width:850px;
+      background:rgba(255,255,255,0.97);
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,0.18);
+      animation:fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* TOP HEADER */
+
+    .top-section{
+      background:linear-gradient(135deg,#2563eb,#3b82f6);
+      color:white;
+      padding:50px 40px;
+      text-align:center;
+    }
+
+    .top-section h1{
+      font-size:46px;
+      margin-bottom:12px;
+      font-weight:800;
+    }
+
+    .top-section p{
+      max-width:650px;
+      margin:auto;
+      color:#dbeafe;
+      font-size:17px;
+      line-height:1.7;
+    }
+
+    /* FORM AREA */
+
+    .form-area{
+      padding:45px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    .input-box{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .full{
+      grid-column:1/3;
+    }
+
+    .input-box label{
+      margin-bottom:10px;
+      font-size:15px;
+      font-weight:700;
+      color:#0f172a;
+    }
+
+    .input-box input,
+    .input-box select,
+    .input-box textarea{
+      padding:16px 18px;
+      border-radius:14px;
+      border:1px solid #cbd5e1;
+      outline:none;
+      font-size:15px;
+      background:#f8fafc;
+      transition:0.3s;
+    }
+
+    .input-box input:focus,
+    .input-box select:focus,
+    .input-box textarea:focus{
+      border-color:#2563eb;
+      background:white;
+      box-shadow:0 0 0 5px rgba(37,99,235,0.12);
+    }
+
+    textarea{
+      resize:none;
+      min-height:120px;
+    }
+
+    /* ICON STYLE */
+
+    .input-box span{
+      margin-bottom:8px;
+      color:#2563eb;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    /* SUBMIT BUTTON */
+
+    .submit-btn{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:16px;
+      background:linear-gradient(135deg,#2563eb,#1d4ed8);
+      color:white;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+      margin-top:10px;
+      box-shadow:0 10px 25px rgba(37,99,235,0.25);
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 35px rgba(37,99,235,0.35);
+    }
+
+    /* HIDE DISEASE BOX */
+
+    #diseaseBox{
+      display:none;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .full{
+        grid-column:auto;
+      }
+
+      .top-section h1{
+        font-size:34px;
+      }
+
+      .form-area{
+        padding:30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="form-container">
+
+    <!-- TOP SECTION -->
+
+    <div class="top-section">
+
+      <h1>Travel Insurance Form</h1>
+
+      <p>
+        Secure your international journey with complete travel protection,
+        medical emergency support, baggage security, and trip coverage.
+      </p>
+
+    </div>
+
+    <!-- FORM AREA -->
+
+    <div class="form-area">
+
+      <form>
+
+        <div class="form-grid">
+
+          <!-- NAME -->
+
+          <div class="input-box">
+
+            <label>Full Name</label>
+
+            <input type="text" placeholder="Enter your full name">
+
+          </div>
+
+          <!-- PHONE -->
+
+          <div class="input-box">
+
+            <label>Phone Number</label>
+
+            <input type="text" placeholder="Enter your phone number">
+
+          </div>
+
+          <!-- COUNTRY -->
+
+          <div class="input-box full">
+
+            <label>Destination Country</label>
+
+            <input type="text" placeholder="Example: Canada, USA, Dubai">
+
+          </div>
+
+          <!-- START DATE -->
+
+          <div class="input-box">
+
+            <label>Travel Start Date</label>
+
+            <input type="date">
+
+          </div>
+
+          <!-- END DATE -->
+
+          <div class="input-box">
+
+            <label>Travel End Date</label>
+
+            <input type="date">
+
+          </div>
+
+          <!-- TRAVELLERS -->
+
+          <div class="input-box full">
+
+            <label>Number of Travellers</label>
+
+            <input type="number" placeholder="Enter total travellers">
+
+          </div>
+
+          <!-- PED -->
+
+          <div class="input-box full">
+
+            <label>Any Pre-Existing Disease (PED)?</label>
+
+            <select id="pedSelect">
+
+              <option value="No">No</option>
+
+              <option value="Yes">Yes</option>
+
+            </select>
+
+          </div>
+
+          <!-- DISEASE NAME -->
+
+          <div class="input-box full" id="diseaseBox">
+
+            <label>Please Mention Disease Name</label>
+
+            <textarea placeholder="Write disease details"></textarea>
+
+          </div>
+
+          <!-- SUBMIT -->
+
+          <div class="input-box full">
+
+            <button class="submit-btn">
+              Submit Travel Details
+            </button>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const pedSelect = document.getElementById("pedSelect");
+    const diseaseBox = document.getElementById("diseaseBox");
+
+    pedSelect.addEventListener("change", function(){
+
+      if(pedSelect.value === "Yes"){
+
+        diseaseBox.style.display = "flex";
+
+      }
+      else{
+
+        diseaseBox.style.display = "none";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>

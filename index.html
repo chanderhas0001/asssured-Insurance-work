@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assured Insurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">Assured<span> Fututre</span><span> Insurance</span></div>
+
+    <nav id="navMenu">
+      <ul>
+        <!-- <li><a href="buy.html">Buy</a></li> -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Buy Services</a></li>
+        <li><a href="claim.html">Claim Support</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reveiw.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- <button class="nav-btn">Get Started</button> -->
+    <!-- <div class="mobile-menu" id="menuBtn">☰</div> -->
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Protect Your Future With Smart Insurance Solutions</h1>
+      <p>
+        Secure your family, business, health, and vehicles with trusted insurance plans.
+        ShieldSure provides fast claims, affordable premiums, and complete digital support.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-primary">Explore Plans</button>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Instant Insurance Quote</h3>
+
+      <div class="form-group">
+        <label>Insurance Type</label>
+        <select id="insuranceType">
+          <option value="health">Health Insurance</option>
+          <option value="car">Car Insurance</option>
+          <option value="car">Bike Insurance</option>
+          <option value="life">Life Insurance</option>
+          <option value="travel">Travel Insurance</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="number" id="age" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label>Phone No </label>
+        <input type="number" id="income" placeholder="Enter Phone No">
+      </div>
+      <div class="form-group">
+        <label>Pin Code </label>
+        <input type="number" id="income" placeholder="Enter Pin Code">
+      </div>
+
+
+      <button class="btn-primary" style="width:100%;" onclick="calculateQuote()">
+        Know your Quote
+      </button>
+
+      <div class="quote-result" id="quoteResult"></div>
+    </div>
+  </div>
+</section>
+<section id="buy">
+  <div class="section-title">
+    <h2> Our Services We Offer</h2>
+    <p>
+      We provide complete insurance coverage solutions tailored for individuals,
+      families, startups, and enterprises.
+    </p>
+  </div>
+
+  <div class="services">
+    <div class="service-card">
+      <div class="service-icon">🏥</div>
+      <h3>Health Insurance</h3>
+      <p>
+        Cashless hospitalization, emergency coverage, preventive healthcare,
+        and family protection plans.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🚗</div>
+      <h3>Vehicle Insurance</h3>
+      <p>
+        Comprehensive car and bike coverage with zero depreciation and roadside assistance.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">👨‍👩‍👧</div>
+      <h3>Life Insurance</h3>
+      <p>
+        Financial security for your loved ones with flexible term and investment-based plans.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Business Insurance</h3>
+      <p>
+        Protect your business assets, employees, operations, and cyber infrastructure.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">✈️</div>
+      <h3>Travel Insurance</h3>
+      <p>
+        Worldwide travel protection including medical emergencies and trip cancellations.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Home Insurance</h3>
+      <p>
+        Secure your home against fire, theft, natural disasters, and structural damage.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>98%</h3>
+      <p>Claim Settlement Ratio</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>500K+</h3>
+      <p>Happy Customers</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>24/7</h3>
+      <p>Customer Support</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>15+</h3>
+      <p>Years Industry Experience</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="why-us">
+    <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="Insurance Team">
+
+    <div>
+      <div class="section-title" style="text-align:left; margin-bottom:20px;">
+        <h2>Why Choose ShieldSure?</h2>
+        <p>
+          We combine AI-powered policy recommendations, fast digital onboarding,
+          and transparent claim handling to deliver premium customer experience.
+        </p>
+      </div>
+
+      <div class="features">
+        <div class="feature-box">
+          <span>⚡</span>
+          <div>
+            <h4>Fast Claim Processing</h4>
+            <p>Digital claims approved in record time.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <span>🔒</span>
+          <div>
+            <h4>Secure Data Protection</h4>
+            <p>Advanced encryption and privacy-first technology.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <span>💡</span>
+          <div>
+            <h4>Smart Policy Suggestions</h4>
+            <p>Customized plans based on your lifestyle and budget.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="section-title">
+    <h2>What Our Customers Say</h2>
+    <p>
+      Thousands of policyholders trust ShieldSure for transparent coverage and fast support.
+    </p>
+  </div>
+
+  <div class="testimonials-wrapper">
+    <div class="testimonial">
+      <p>
+        “The claim process was incredibly smooth. I received support within hours and the team guided me through every step.”
+      </p>
+
+      <div class="client">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+        <div>
+          <h4>David Miller</h4>
+          <small>Business Owner</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “Best health insurance platform I have used. Easy dashboard, affordable premiums, and excellent support team.”
+      </p>
+
+      <div class="client">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+        <div>
+          <h4>Sophia Lee</h4>
+          <small>Software Engineer</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “I insured my car and home together with ShieldSure and got amazing bundled discounts.”
+      </p>
+
+      <div class="client">
+        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Client">
+        <div>
+          <h4>Michael Brown</h4>
+          <small>Marketing Consultant</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cta">
+    <h2>Ready To Secure Your Future?</h2>
+    <p>
+      Get personalized insurance plans with affordable pricing, smart analytics,
+      and 24/7 digital support.
+    </p>
+
+    <button class="btn-primary">Get Your Free Quote</button>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <h3>ShieldSure</h3>
+      <p style="line-height:1.8; color:rgba(255,255,255,0.75);">
+        Modern insurance solutions built with technology, trust, and customer-first support.
+      </p>
+    </div>
+
+    <div>
+      <h3>Services</h3>
+      <ul>
+        <li>Health Insurance</li>
+        <li>Life Insurance</li>
+        <li>Travel Insurance</li>
+        <li>Business Insurance</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li>About Us</li>
+        <li>Careers</li>
+        <li>Claims</li>
+        <li>Privacy Policy</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>Email: support@shieldsure.com</li>
+        <li>Phone: +1 800 000 0000</li>
+        <li>Address: New York, USA</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 ShieldSure Insurance. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  function calculateQuote() {
+    const type = document.getElementById('insuranceType').value;
+    const age = parseInt(document.getElementById('age').value);
+    const income = parseInt(document.getElementById('income').value);
+    const result = document.getElementById('quoteResult');
+
+    if (!age || !income) {
+      result.style.display = 'block';
+      result.innerHTML = '⚠️ Please fill all fields correctly.';
+      return;
+    }
+
+    let basePrice = 100;
+
+    switch(type) {
+      case 'health':
+        basePrice = 220;
+        break;
+      case 'car':
+        basePrice = 180;
+        break;
+      case 'life':
+        basePrice = 260;
+        break;
+      case 'travel':
+        basePrice = 140;
+        break;
+    }
+
+    const ageFactor = age * 3;
+    const incomeFactor = income / 10000;
+    const total = Math.round(basePrice + ageFactor + incomeFactor);
+
+    result.style.display = 'block';
+    result.innerHTML = `✅ Estimated Monthly Premium: <br><h2>$${total}</h2>`;
+  }
+
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+
+    if(window.scrollY > 50) {
+      header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI', sans-serif;
+    }
+
+    body{
+      background:#f1f5f9;
+      color:#0f172a;
+      line-height:1.7;
+    }
+
+    /* HERO */
+
+    .hero{
+      background:
+      linear-gradient(rgba(15,23,42,0.85), rgba(37,99,235,0.85)),
+      url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1400&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+      color:white;
+      padding:120px 8%;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:800px;
+      margin:auto;
+      font-size:20px;
+      color:#dbeafe;
+    }
+
+    /* CONTAINER */
+
+    .container{
+      width:90%;
+      max-width:1300px;
+      margin:80px auto;
+    }
+
+    /* CONTACT SECTION */
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:40px;
+      margin-bottom:80px;
+    }
+
+    /* CONTACT INFO */
+
+    .contact-info{
+      background:white;
+      padding:45px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-info h2{
+      font-size:40px;
+      margin-bottom:20px;
+      color:#2563eb;
+    }
+
+    .contact-info p{
+      color:#64748b;
+      margin-bottom:35px;
+    }
+
+    .info-box{
+      display:flex;
+      gap:18px;
+      margin-bottom:30px;
+      background:#eff6ff;
+      padding:20px;
+      border-radius:16px;
+    }
+
+    .icon{
+      width:60px;
+      height:60px;
+      background:#2563eb;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      font-size:24px;
+      flex-shrink:0;
+    }
+
+    .info-text h3{
+      margin-bottom:8px;
+      color:#0f172a;
+    }
+
+    .info-text p{
+      margin:0;
+      color:#475569;
+    }
+
+    /* FORM */
+
+    .contact-form{
+      background:white;
+      padding:45px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-form h2{
+      font-size:40px;
+      margin-bottom:20px;
+      color:#2563eb;
+    }
+
+    .input-group{
+      margin-bottom:25px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:10px;
+      color:#0f172a;
+      font-weight:600;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select{
+      width:100%;
+      padding:16px;
+      border:1px solid #cbd5e1;
+      border-radius:12px;
+      outline:none;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus,
+    .input-group select:focus{
+      border-color:#2563eb;
+      box-shadow:0 0 0 4px rgba(37,99,235,0.1);
+    }
+
+    textarea{
+      resize:none;
+      height:150px;
+    }
+
+    .submit-btn{
+      width:100%;
+      padding:16px;
+      border:none;
+      background:#2563eb;
+      color:white;
+      border-radius:12px;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .submit-btn:hover{
+      background:#1d4ed8;
+    }
+
+    /* OFFICE SECTION */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:45px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#64748b;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .office-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      margin-bottom:80px;
+    }
+
+    .office-card{
+      background:white;
+      padding:35px;
+      border-radius:22px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      border-top:5px solid #2563eb;
+      transition:0.3s;
+    }
+
+    .office-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .office-card h3{
+      margin-bottom:15px;
+      color:#2563eb;
+      font-size:28px;
+    }
+
+    .office-card p{
+      color:#475569;
+      margin-bottom:10px;
+    }
+
+    /* FAQ */
+
+    .faq-section{
+      margin-bottom:80px;
+    }
+
+    .faq-box{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      margin-bottom:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .faq-box h3{
+      color:#2563eb;
+      margin-bottom:12px;
+    }
+
+    .faq-box p{
+      color:#475569;
+    }
+
+    /* CTA */
+
+    .cta{
+      background:linear-gradient(135deg,#2563eb,#3b82f6);
+      color:white;
+      text-align:center;
+      padding:70px 30px;
+      border-radius:30px;
+      margin-bottom:80px;
+    }
+
+    .cta h2{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+      margin-bottom:30px;
+      color:#dbeafe;
+    }
+
+    .cta button{
+      padding:16px 40px;
+      border:none;
+      background:white;
+      color:#2563eb;
+      border-radius:12px;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:25px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .contact-info h2,
+      .contact-form h2,
+      .section-title h2,
+      .cta h2{
+        font-size:32px;
+      }
+
+      .contact-info,
+      .contact-form{
+        padding:30px;
+      }
+
+    }
+
+
+
+
+ header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .navbar {
+      max-width: 1300px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--secondary);
+      
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+
+    .nav-btn {
+      padding: 12px 22px;
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+
+
+
+
+
+
+  </style>
+
+</head>
+
+<body>
+    <header>
+  <div class="navbar">
+    <div class="logo">Assured<span> Fututre</span><span> Insurance</span></div>
+
+    <nav id="navMenu">
+      <ul>
+        <!-- <li><a href="buy.html">Buy</a></li> -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reveiw.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-btn">Get Started</button>
+    <div class="mobile-menu" id="menuBtn">☰</div>
+  </div>
+</header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>Contact Our Insurance Team</h1>
+
+    <p>
+      We are always ready to help you with insurance plans,
+      claim support, and customer assistance services.
+    </p>
+
+  </section>
+
+  <div class="container">
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact-wrapper">
+
+      <!-- CONTACT INFO -->
+
+      <div class="contact-info">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+          Contact our support team for insurance guidance,
+          policy details, and claim assistance.
+        </p>
+
+        <div class="info-box">
+
+          <div class="icon">📞</div>
+
+          <div class="info-text">
+
+            <h3>Phone Number</h3>
+
+            <p>+91 98765 43210</p>
+
+            <p>+1 800 123 456</p>
+
+          </div>
+
+        </div>
+
+        <div class="info-box">
+
+          <div class="icon">📧</div>
+
+          <div class="info-text">
+
+            <h3>Email Address</h3>
+
+            <p>support@insurance.com</p>
+
+            <p>help@insurance.com</p>
+
+          </div>
+
+        </div>
+
+        <div class="info-box">
+
+          <div class="icon">📍</div>
+
+          <div class="info-text">
+
+            <h3>Office Address</h3>
+
+            <p>Connaught Place, New Delhi, India</p>
+
+          </div>
+
+        </div>
+
+        <div class="info-box">
+
+          <div class="icon">⏰</div>
+
+          <div class="info-text">
+
+            <h3>Working Hours</h3>
+
+            <p>Monday - Saturday</p>
+
+            <p>9:00 AM - 8:00 PM</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+
+      <div class="contact-form">
+
+        <h2>Send Message</h2>
+
+        <form>
+
+          <div class="input-group">
+
+            <label>Full Name</label>
+
+            <input type="text" placeholder="Enter your name">
+
+          </div>
+
+          <div class="input-group">
+
+            <label>Email Address</label>
+
+            <input type="email" placeholder="Enter your email">
+
+          </div>
+
+          <div class="input-group">
+
+            <label>Phone Number</label>
+
+            <input type="text" placeholder="Enter your phone number">
+
+          </div>
+
+          <div class="input-group">
+
+            <label>Select Insurance Service</label>
+
+            <select>
+
+              <option>Health Insurance</option>
+              <option>Vehicle Insurance</option>
+              <option>Life Insurance</option>
+              <option>Business Insurance</option>
+              <option>Travel Insurance</option>
+              <option>Home Insurance</option>
+
+            </select>
+
+          </div>
+
+          <div class="input-group">
+
+            <label>Your Message</label>
+
+            <textarea placeholder="Write your message"></textarea>
+
+          </div>
+
+          <button class="submit-btn">
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- OFFICES -->
+
+    <section>
+
+      <div class="section-title">
+
+        <h2>Our Branch Offices</h2>
+
+        <p>
+          Visit our offices for policy consultation and customer support.
+        </p>
+
+      </div>
+
+      <div class="office-grid">
+
+        <div class="office-card">
+
+          <h3>New Delhi</h3>
+
+          <p>Connaught Place, Delhi</p>
+
+          <p>+91 98765 43210</p>
+
+          <p>delhi@insurance.com</p>
+
+        </div>
+
+        <div class="office-card">
+
+          <h3>Mumbai</h3>
+
+          <p>Bandra West, Mumbai</p>
+
+          <p>+91 99887 77665</p>
+
+          <p>mumbai@insurance.com</p>
+
+        </div>
+
+        <div class="office-card">
+
+          <h3>London</h3>
+
+          <p>22 Oxford Street, UK</p>
+
+          <p>+44 200 456 789</p>
+
+          <p>london@insurance.com</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="faq-section">
+
+      <div class="section-title">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <p>
+          Quick answers for common customer questions.
+        </p>
+
+      </div>
+
+      <div class="faq-box">
+
+        <h3>How can I purchase insurance?</h3>
+
+        <p>
+          You can purchase insurance online or visit our nearest office branch.
+        </p>
+
+      </div>
+
+      <div class="faq-box">
+
+        <h3>How long does claim settlement take?</h3>
+
+        <p>
+          Most claims are processed within 7 to 15 working days.
+        </p>
+
+      </div>
+
+      <div class="faq-box">
+
+        <h3>Do you provide 24/7 support?</h3>
+
+        <p>
+          Yes, our support team is available for emergency assistance anytime.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <h2>Need Insurance Support?</h2>
+
+      <p>
+        Our expert advisors are ready to help you choose the best insurance plan.
+      </p>
+
+      <button>Contact Support</button>
+
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>© 2026 Insurance Company | All Rights Reserved</p>
+
+  </footer>
+
+</body>
+
+</html>

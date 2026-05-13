@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Services</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI', sans-serif;
+    }
+
+    body{
+      background:#f1f5f9;
+      color:#0f172a;
+      line-height:1.7;
+    }
+
+    header{
+      background:linear-gradient(135deg,#0f172a,#2563eb);
+      color:white;
+      padding:90px 8%;
+      text-align:center;
+    }
+
+
+    header h1{
+      font-size:55px;
+      margin-bottom:20px;
+    }
+
+    header p{
+      max-width:750px;
+      margin:auto;
+      font-size:18px;
+      color:#dbeafe;
+    }
+
+    .container{
+      width:90%;
+      max-width:1300px;
+      margin:70px auto;
+    }
+
+    .service-section{
+      background:white;
+      border-radius:25px;
+      margin-bottom:50px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .service-header{
+      background:linear-gradient(135deg,#2563eb,#3b82f6);
+      color:white;
+      padding:35px;
+    }
+
+    .service-header h2{
+      font-size:38px;
+      margin-bottom:10px;
+    }
+
+    .service-header p{
+      color:#dbeafe;
+      font-size:17px;
+    }
+
+    .service-content{
+      padding:40px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#f8fbff;
+      border-radius:18px;
+      padding:28px;
+      border:1px solid #dbeafe;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 25px rgba(37,99,235,0.12);
+    }
+
+    .card h3{
+      color:#2563eb;
+      margin-bottom:18px;
+      font-size:23px;
+    }
+
+    .card ul{
+      padding-left:18px;
+    }
+
+    .card ul li{
+      margin-bottom:12px;
+      color:#334155;
+    }
+
+    .steps{
+      margin-top:35px;
+    }
+
+    .steps h3{
+      margin-bottom:20px;
+      color:#2563eb;
+      font-size:25px;
+    }
+
+    .step-box{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      margin-bottom:18px;
+      background:#eff6ff;
+      padding:18px;
+      border-radius:14px;
+    }
+
+    .step-number{
+      min-width:45px;
+      height:45px;
+      background:#2563eb;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      font-weight:bold;
+      font-size:18px;
+    }
+
+    .important{
+      margin-top:30px;
+      background:#dbeafe;
+      padding:22px;
+      border-left:5px solid #2563eb;
+      border-radius:12px;
+    }
+
+    .important h4{
+      margin-bottom:10px;
+      color:#1e3a8a;
+    }
+
+    .buy-btn{
+      margin-top:30px;
+      padding:15px 35px;
+      border:none;
+      background:#2563eb;
+      color:white;
+      border-radius:12px;
+      font-size:17px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .buy-btn:hover{
+      background:#1d4ed8;
+    }
+
+    footer{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:50px;
+    }
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:38px;
+      }
+
+      .service-header h2{
+        font-size:30px;
+      }
+
+      .service-content{
+        padding:25px;
+      }
+
+    }
+
+     
+
+    .navbar {
+      max-width: 1300px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--secondary);
+      
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+
+    .nav-btn {
+      padding: 12px 22px;
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    #front{
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      background:rgba(168, 169, 219, 0.179);
+      backdrop-filter: blur(10px);
+    
+
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+<header>
+    
+  <div class="navbar" id="front">
+    <div class="logo">Assured<span> Fututre</span><span> Insurance</span></div>
+
+    <nav id="navMenu">
+      <ul>
+        <!-- <li><a href="buy.html">Buy</a></li> -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reveiw.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- <button class="nav-btn">Get Started</button>
+    <div class="mobile-menu" id="menuBtn">☰</div> -->
+  </div>
+
+
+  <h1>Insurance Services We Provide</h1>
+
+  <p>
+    Protect your future with our trusted insurance solutions.
+    We provide complete coverage for health, vehicle, life,
+    business, travel, and home protection.
+  </p>
+
+</header>
+
+<div class="container">
+
+  <!-- Health Insurance -->
+
+  <div class="service-section">
+
+    <div class="service-header">
+
+      <h2>Health Insurance</h2>
+
+      <p>
+        Medical protection plans for individuals and families.
+      </p>
+
+    </div>
+
+    <div class="service-content">
+
+      <div class="grid">
+
+        <div class="card">
+
+          <h3>Coverage Benefits</h3>
+
+          <ul>
+            <li>Cashless Hospitalization</li>
+            <li>Emergency Treatment</li>
+            <li>Critical Illness Cover</li>
+            <li>Medicine Expenses</li>
+            <li>Doctor Consultation</li>
+          </ul>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Eligibility</h3>
+
+          <ul>
+            <li>Minimum age 18 years</li>
+            <li>ID proof required</li>
+            <li>Medical history check</li>
+            <li>Premium based on age</li>
+          </ul>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Required Documents</h3>
+
+          <ul>
+            <li>Aadhar Card</li>
+            <li>PAN Card</li>
+            <li>Passport Photo</li>
+            <li>Medical Reports</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- <div class="steps">
+     
+
+
+
+        <h3>   
+  how to purchase
+</h3>
+
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div>Select your health insurance plan.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div>Submit your documents and medical details.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div>Complete verification and payment.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <div>Policy will be activated instantly.</div>
+        </div>
+
+      </div>
+
+      <div class="important">
+
+        <h4>Important Conditions</h4>
+
+        <p>
+          Pre-existing diseases may include waiting periods.
+          Incorrect information can reject claims.
+        </p>
+
+      </div> -->
+
+      <button class="buy-btn" onclick="window.location.href='health_buy.html'" >Purchase Insurance</button>
+     
+
+    </div>
+
+  </div>
+
+  <!-- Vehicle Insurance -->
+
+  <div class="service-section">
+
+    <div class="service-header">
+
+      <h2>Vehicle Insurance</h2>
+
+      <p>
+        Complete protection for cars, bikes, and commercial vehicles.
+      </p>
+
+    </div>
+
+    <div class="service-content">
+
+      <div class="grid">
+
+        <div class="card">
+
+          <h3>Coverage Benefits</h3>
+
+          <ul>
+            <li>Accident Protection</li>
+            <li>Theft Coverage</li>
+            <li>Roadside Assistance</li>
+            <li>Natural Disaster Protection</li>
+            <li>Third-Party Insurance</li>
+          </ul>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Eligibility</h3>
+
+          <ul>
+            <li>Valid driving license</li>
+            <li>Vehicle registration needed</li>
+            <li>Vehicle inspection for old vehicles</li>
+            <li>Commercial vehicle verification</li>
+          </ul>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Required Documents</h3>
+
+          <ul>
+            <li>Driving License</li>
+            <li>RC Book</li>
+            <li>Vehicle Photos</li>
+            <li>Identity Proof</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- <div class="steps">
+
+        <h3>How To Purchase</h3>
+
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div>Select vehicle type and coverage.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div>Upload vehicle documents.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div>Vehicle verification process.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <div>Complete payment and activate policy.</div>
+        </div>
+
+      </div>
+
+      <div class="important">
+
+        <h4>Important Conditions</h4>
+
+        <p>
+          Claims can be rejected without valid driving license
+          or expired registration certificate.
+        </p>
+
+      </div> -->
+
+      <!-- <button class="buy-btn" id="openBtn">Purchase Insurance</button> -->
+       <button class="buy-btn" onclick="window.location.href='vehicle_buy.html'" >Purchase Insurance</button>
+
+    </div>
+
+  </div>
+  <!-- Travel Insurance -->
+
+<div class="service-section">
+
+  <div class="service-header">
+
+    <h2>Travel Insurance</h2>
+
+    <p>
+      Secure your domestic and international journeys with complete travel protection.
+    </p>
+
+  </div>
+
+  <div class="service-content">
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>Coverage Benefits</h3>
+
+        <ul>
+          <li>Emergency Medical Assistance</li>
+          <li>Flight Delay Compensation</li>
+          <li>Lost Baggage Protection</li>
+          <li>Trip Cancellation Coverage</li>
+          <li>Passport Loss Assistance</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Eligibility</h3>
+
+        <ul>
+          <li>Valid passport required</li>
+          <li>Travel ticket details needed</li>
+          <li>Insurance before trip starts</li>
+          <li>Medical disclosure mandatory</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Required Documents</h3>
+
+        <ul>
+          <li>Passport Copy</li>
+          <li>Travel Tickets</li>
+          <li>Visa Documents</li>
+          <li>Identity Proof</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- <div class="steps">
+
+      <h3>How To Purchase</h3>
+
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div>Select destination and travel dates.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div>Upload passport and travel documents.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div>Choose coverage and emergency benefits.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div>Complete payment and receive policy instantly.</div>
+      </div>
+
+    </div>
+
+    <div class="important">
+
+      <h4>Important Conditions</h4>
+
+      <p>
+        Adventure sports and risky activities may not be covered under standard policies.
+      </p>
+
+    </div> -->
+
+    <button class="buy-btn" onclick="window.location.href='travel_buy.html'" >Purchase Insurance</button>
+
+  </div>
+
+</div>
+
+
+<!-- Fire Insurance -->
+
+<div class="service-section">
+
+  <div class="service-header">
+
+    <h2>Fire Insurance</h2>
+
+    <p>
+      Protect your home, furniture, electronics, and valuable assets from unexpected damage.
+    </p>
+
+  </div>
+
+  <div class="service-content">
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>Coverage Benefits</h3>
+
+        <ul>
+          <li>Fire Damage Protection</li>
+          <li>Theft and Burglary Coverage</li>
+          <li>Flood and Natural Disaster Cover</li>
+          <li>Furniture Protection</li>
+          <li>Electrical Damage Support</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Eligibility</h3>
+
+        <ul>
+          <li>Property ownership proof required</li>
+          <li>Home inspection for premium houses</li>
+          <li>Valid address verification</li>
+          <li>Property valuation needed</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Required Documents</h3>
+
+        <ul>
+          <li>Property Papers</li>
+          <li>Identity Proof</li>
+          <li>Address Proof</li>
+          <li>Property Photos</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- <div class="steps">
+
+      <h3>How To Purchase</h3>
+
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div>Select your property type and value.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div>Submit ownership and address documents.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div>Property verification and inspection.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div>Policy approval and activation.</div>
+      </div>
+
+    </div>
+
+    <div class="important">
+
+      <h4>Important Conditions</h4>
+
+      <p>
+        Illegal construction and intentional damage are not covered under home insurance policies.
+      </p>
+
+    </div> -->
+
+   <button class="buy-btn" onclick="window.location.href='home_buy.html'" >Purchase Insurance</button>
+
+  </div>
+
+</div>
+
+
+<!-- Loans and Credit Cards -->
+
+<div class="service-section">
+
+  <div class="service-header">
+
+    <h2>Loans and Credit Cards </h2>
+
+    <p>
+      Protect your company operations, employees, property, and digital infrastructure.
+    </p>
+
+  </div>
+
+  <div class="service-content">
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>Coverage Benefits</h3>
+
+        <ul>
+          <li>Property Damage Protection</li>
+          <li>Cyber Security Coverage</li>
+          <li>Employee Insurance Plans</li>
+          <li>Business Interruption Support</li>
+          <li>Liability Protection</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Eligibility</h3>
+
+        <ul>
+          <li>Business registration required</li>
+          <li>GST and tax details needed</li>
+          <li>Office address verification</li>
+          <li>Financial records may be required</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Required Documents</h3>
+
+        <ul>
+          <li>Business Registration Certificate</li>
+          <li>GST Documents</li>
+          <li>Company PAN Card</li>
+          <li>Financial Statements</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- <div class="steps">
+
+      <h3>How To Purchase</h3>
+
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div>Select business category and coverage.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div>Upload company registration documents.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div>Risk assessment and verification process.</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div>Payment and policy activation.</div>
+      </div>
+
+    </div>
+
+    <div class="important">
+
+      <h4>Important Conditions</h4>
+
+      <p>
+        Cyber insurance may require proper security systems and compliance standards.
+      </p>
+
+    </div> -->
+
+   <button class="buy-btn" onclick="window.location.href='loans_cred_buy.html'" >Purchase Insurance</button>
+
+  </div>
+
+</div>
+
+  <!-- Life Insurance -->
+
+  <div class="service-section">
+
+    <div class="service-header">
+
+      <h2>Life Insurance</h2>
+
+      <p>
+        Financial protection and long-term security for your family.
+      </p>
+
+    </div>
+
+    <div class="service-content">
+
+      <div class="grid">
+
+        <div class="card">
+
+          <h3>Coverage Benefits</h3>
+
+          <ul>
+            <li>Family Financial Security</li>
+            <li>Retirement Planning</li>
+            <li>Child Education Plans</li>
+            <li>Investment Benefits</li>
+            <li>Long-Term Savings</li>
+          </ul>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Eligibility</h3>
+
+          <ul>
+            <li>Minimum age 18 years</li>
+            <li>Income proof required</li>
+            <li>Medical checkup needed</li>
+            <li>Nominee information mandatory</li>
+          </ul>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Required Documents</h3>
+
+          <ul>
+            <li>PAN Card</li>
+            <li>Aadhar Card</li>
+            <li>Income Proof</li>
+            <li>Medical Reports</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- <div class="steps">
+
+        <h3>How To Purchase</h3>
+
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div>Choose your life coverage amount.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div>Submit identity and income documents.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div>Complete medical examination.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <div>Policy approval and activation.</div>
+        </div>
+
+      </div>
+
+      <div class="important">
+
+        <h4>Important Conditions</h4>
+
+        <p>
+          Hiding medical history or smoking habits can cause policy cancellation.
+        </p>
+
+      </div> -->
+
+      <button class="buy-btn" onclick="window.location.href='life_buy.html'" >Purchase Insurance</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+
+  <p>© 2026 Insurance Company. All Rights Reserved.</p>
+
+</footer>
+
+
+</body>
+</html>
