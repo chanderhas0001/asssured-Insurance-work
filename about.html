@@ -368,7 +368,17 @@
       cursor: pointer;
       box-shadow: var(--shadow);
     }
-
+    .office-logo{
+        width:200px;
+        height:70px;
+        object-fit:contain;
+        margin-right:0px;
+        margin-left: -100px;
+    }
+    .logo-container{
+      display:flex;
+      align-items:center;
+    }
 
 
 
@@ -380,23 +390,48 @@
 </head>
 
 <body>
-    <header>
-  <div class="navbar">
+  <!-- <div class="navbar" >
     <div class="logo">Assured<span> Fututre</span><span> Insurance</span></div>
-
+ 
     <nav id="navMenu">
-      <ul>
-        <!-- <li><a href="buy.html">Buy</a></li> -->
+      <ul >
+        <li><a href="buy.html">Buy</a></li>
         <li><a href="index.html">Home</a></li>
         <li><a href="service.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="reveiw.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <button class="nav-btn">Get Started</button>
-    <div class="mobile-menu" id="menuBtn">☰</div>
+   
+  </div> -->
+
+<header>
+  <div class="navbar">
+     <div class="logo-container">
+
+    <img src="logo.jpeg" alt="Company Logo" class="office-logo">
+
+    <div class="logo">
+      Assured<span> Fututre</span><span> Insurance</span>
+    </div>
+
+  </div>
+
+    <nav id="navMenu">
+      <ul>
+        <!-- <li><a href="buy.html">Buy</a></li> -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Buy Services</a></li>
+        <li><a href="claim.html">Claim Support</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reveiw.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+         <li><a href="Get_jobs.html">Get Jobs</a></li>
+      </ul>
+    </nav>
+
+   
   </div>
 </header>
 

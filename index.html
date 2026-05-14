@@ -14,17 +14,26 @@
 
 <header>
   <div class="navbar">
-    <div class="logo">Assured<span> Fututre</span><span> Insurance</span></div>
+     <div class="logo-container">
+
+    <img src="logo.jpeg" alt="Company Logo" class="office-logo">
+
+    <div class="logo">
+      Assured<span> Future</span><span> Insurance</span>
+    </div>
+
+  </div>
 
     <nav id="navMenu">
       <ul>
         <!-- <li><a href="buy.html">Buy</a></li> -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="service.html">Buy Services</a></li>
-        <li><a href="claim.html">Claim Support</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="reveiw.html">Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="service.html">BUY SERVICES</a></li>
+        <li><a href="claim.html">CLAIM SUPPORT</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="reveiw.html">REVIEWS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+         <li><a href="Get_jobs.html">GET JOBS</a></li>
       </ul>
     </nav>
 
@@ -36,53 +45,95 @@
 <section class="hero" id="home">
   <div class="hero-content">
     <div class="hero-text">
-      <h1>Protect Your Future With Smart Insurance Solutions</h1>
+      <h1>Complete Protection For Every Stage Of Life</h1>
       <p>
         Secure your family, business, health, and vehicles with trusted insurance plans.
         ShieldSure provides fast claims, affordable premiums, and complete digital support.
       </p>
 
       <div class="hero-buttons">
-        <button class="btn-primary">Explore Plans</button>
-        <button class="btn-secondary">Learn More</button>
+        <button class="btn-primary" onclick="window.location.href='service.html'">Explore Plans</button>
+        <button class="btn-secondary" onclick="window.location.href='about.html'">Learn More</button>
       </div>
     </div>
 
+   
     <div class="hero-card">
-      <h3>Instant Insurance Quote</h3>
 
-      <div class="form-group">
-        <label>Insurance Type</label>
-        <select id="insuranceType">
-          <option value="health">Health Insurance</option>
-          <option value="car">Car Insurance</option>
-          <option value="car">Bike Insurance</option>
-          <option value="life">Life Insurance</option>
-          <option value="travel">Travel Insurance</option>
-        </select>
-      </div>
+  <h3>Instant Insurance Quote</h3>
 
-      <div class="form-group">
-        <label>Name</label>
-        <input type="number" id="age" placeholder="Enter your name">
-      </div>
+  <form action="https://api.web3forms.com/submit" method="POST">
 
-      <div class="form-group">
-        <label>Phone No </label>
-        <input type="number" id="income" placeholder="Enter Phone No">
-      </div>
-      <div class="form-group">
-        <label>Pin Code </label>
-        <input type="number" id="income" placeholder="Enter Pin Code">
-      </div>
+    <!-- WEB3FORMS ACCESS KEY -->
+    <input 
+      type="hidden" 
+      name="access_key" 
+      value="1dba0e51-0344-4730-8ec1-6cc53fbc679f"
+    >
 
+    <!-- EMAIL SUBJECT -->
+    <input 
+      type="hidden" 
+      name="subject" 
+      value="New Insurance Lead"
+    >
 
-      <button class="btn-primary" style="width:100%;" onclick="calculateQuote()">
-        Know your Quote
-      </button>
+    <div class="form-group">
+      <label>Insurance Type</label>
 
-      <div class="quote-result" id="quoteResult"></div>
+      <select name="insurance" required>
+        <option value="Health Insurance">Health Insurance</option>
+        <option value="Car Insurance">Car Insurance</option>
+        <option value="Bike Insurance">Bike Insurance</option>
+        <option value="Life Insurance">Life Insurance</option>
+        <option value="Travel Insurance">Travel Insurance</option>
+      </select>
     </div>
+
+    <div class="form-group">
+      <label>Name</label>
+
+      <input 
+        type="text"
+        name="name"
+        placeholder="Enter your name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Phone No</label>
+
+      <input 
+        type="tel"
+        name="phone"
+        placeholder="Enter Phone No"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Pin Code</label>
+
+      <input 
+        type="text"
+        name="pincode"
+        placeholder="Enter Pin Code"
+        required
+      >
+    </div>
+
+    <button 
+      type="submit"
+      class="btn-primary"
+      style="width:100%;"
+    >
+      Know your Quote
+    </button>
+
+  </form>
+
+</div>
   </div>
 </section>
 <section id="buy">
@@ -95,7 +146,7 @@
   </div>
 
   <div class="services">
-    <div class="service-card">
+    <div class="service-card" onclick="window.location.href='health_buy.html'">
       <div class="service-icon">🏥</div>
       <h3>Health Insurance</h3>
       <p>
@@ -104,7 +155,7 @@
       </p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" onclick="window.location.href='vehicle_buy.html'">
       <div class="service-icon">🚗</div>
       <h3>Vehicle Insurance</h3>
       <p>
@@ -112,7 +163,7 @@
       </p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" onclick="window.location.href='life_buy.html'">
       <div class="service-icon">👨‍👩‍👧</div>
       <h3>Life Insurance</h3>
       <p>
@@ -120,15 +171,15 @@
       </p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" onclick="window.location.href='loans_cred_buy.html'">
       <div class="service-icon">🏢</div>
-      <h3>Business Insurance</h3>
+      <h3>Loans and Credit Cards Insurance</h3>
       <p>
         Protect your business assets, employees, operations, and cyber infrastructure.
       </p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" onclick="window.location.href='travel_buy.html'">
       <div class="service-icon">✈️</div>
       <h3>Travel Insurance</h3>
       <p>
@@ -136,16 +187,60 @@
       </p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" onclick="window.location.href='fire_buy.html'">
       <div class="service-icon">🏠</div>
-      <h3>Home Insurance</h3>
+      <h3>Fire Insurance</h3>
       <p>
         Secure your home against fire, theft, natural disasters, and structural damage.
       </p>
     </div>
   </div>
 </section>
+<!-- PARTNER LOGOS SECTION -->
+<section class="partners-section">
+  
+  <div class="section-title">
+    <h2>Trusted Insurance Partners</h2>
+    <p>
+      We proudly work with India's most trusted insurance companies
+      to provide secure and reliable coverage solutions.
+    </p>
+  </div>
 
+  <div class="logo-slider">
+    <div class="logo-track">
+
+      <!-- LOGOS -->
+      <div class="logo-item"><img src="logos/logo1.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo2.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo3.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo4.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo5.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo6.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo7.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo8.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo9.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo10.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo11.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo12.jpeg" alt=""></div>
+
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
+     <div class="logo-item"><img src="logos/logo1.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo2.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo3.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo4.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo5.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo6.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo7.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo8.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo9.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo10.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo11.jpeg" alt=""></div>
+      <div class="logo-item"><img src="logos/logo12.jpeg" alt=""></div>
+
+    </div>
+  </div>
+</section>
 
 
 <section class="stats">
@@ -275,7 +370,10 @@
       and 24/7 digital support.
     </p>
 
-    <button class="btn-primary">Get Your Free Quote</button>
+    <!-- <button class="btn-primary">Get Your Free Quote</button> -->
+     <button class="btn-primary" onclick="window.location.href='free_quote.html'">
+  Get Your Free Quote
+</button>
   </div>
 </section>
 

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Insurance Quote</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI', sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px 20px;
+      background:
+      linear-gradient(rgba(15,23,42,0.75),rgba(37,99,235,0.75)),
+      url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+
+    .quote-box{
+      width:100%;
+      max-width:600px;
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:30px;
+      padding:45px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.25);
+      color:white;
+    }
+
+    .quote-header{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .quote-header h1{
+      font-size:42px;
+      margin-bottom:12px;
+      font-weight:800;
+    }
+
+    .quote-header p{
+      color:#dbeafe;
+      font-size:17px;
+      line-height:1.7;
+    }
+
+    .form-group{
+      margin-bottom:22px;
+    }
+
+    .form-group label{
+      display:block;
+      margin-bottom:10px;
+      font-size:15px;
+      font-weight:600;
+      color:white;
+    }
+
+    .form-group input,
+    .form-group select{
+      width:100%;
+      padding:17px 18px;
+      border:none;
+      outline:none;
+      border-radius:14px;
+      background:rgba(255,255,255,0.18);
+      color:white;
+      font-size:16px;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.2);
+    }
+
+    .form-group input::placeholder{
+      color:#dbeafe;
+    }
+
+    .form-group select{
+      color:white;
+    }
+
+    .form-group select option{
+      color:black;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus{
+      background:rgba(255,255,255,0.24);
+      border-color:#93c5fd;
+      box-shadow:0 0 0 4px rgba(147,197,253,0.18);
+    }
+
+    .submit-btn{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:16px;
+      background:linear-gradient(135deg,#2563eb,#60a5fa);
+      color:white;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+      margin-top:10px;
+      box-shadow:0 10px 25px rgba(37,99,235,0.35);
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-3px);
+      background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+    }
+
+    .secure-text{
+      text-align:center;
+      margin-top:18px;
+      color:#dbeafe;
+      font-size:14px;
+    }
+
+    @media(max-width:650px){
+
+      .quote-box{
+        padding:30px 24px;
+      }
+
+      .quote-header h1{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="quote-box">
+
+    <div class="quote-header">
+      <h1>Get Your Free Quote</h1>
+
+      <p>
+        Compare premium insurance plans for health, vehicle,
+        life and travel protection with trusted coverage.
+      </p>
+    </div>
+
+    <form>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="form-group">
+        <label>Pin Code</label>
+        <input type="number" placeholder="Enter your pin code" required>
+      </div>
+
+      <div class="form-group">
+        <label>Select Insurance Type</label>
+
+        <select required>
+          <option value="">Choose Insurance Type</option>
+          <option>Health Insurance</option>
+          <option>Car Insurance</option>
+          <option>Bike Insurance</option>
+          <option>Life Insurance</option>
+          <option>Travel Insurance</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Get Free Quote
+      </button>
+
+      <div class="secure-text">
+        🔒 Your details are secure & confidential.
+      </div>
+
+    </form>
+
+  </div>
+
+</body>
+</html>
+

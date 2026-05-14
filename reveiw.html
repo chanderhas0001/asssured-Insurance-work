@@ -355,6 +355,8 @@
       display: flex;
       gap: 30px;
       list-style: none;
+      font-size: medium;
+      
     }
 
     nav ul li a {
@@ -378,7 +380,17 @@
       cursor: pointer;
       box-shadow: var(--shadow);
     }
-
+       .office-logo{
+        width:200px;
+        height:70px;
+        object-fit:contain;
+        margin-right:0px;
+        margin-left: -100px;
+    }
+    .logo-container{
+      display:flex;
+      align-items:center;
+    }
 
 
   </style>
@@ -388,22 +400,33 @@
 <body>
     <header>
   <div class="navbar">
-    <div class="logo">Assured<span> Fututre</span><span> Insurance</span></div>
+    <div class="logo-container">
+
+    <img src="logo.jpeg" alt="Company Logo" class="office-logo">
+
+    <div class="logo">
+      Assured<span> Fututre</span><span> Insurance</span>
+    </div>
+
+  </div>
+    
 
     <nav id="navMenu">
       <ul>
-        <!-- <li><a href="buy.html">Buy</a></li> -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="service.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="reveiw.html">Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
+       
+        <li><a href="index.html"><span style="font-weight: bold; font-size: 20px;"><I>HOME</I> </span></a></li>
+        <li><a href="service.html"> <span style="font-weight: bold; font-size: 20px;"><I>SERVICES</I> </span></a></li>
+        <li><a href="about.html"><span style="font-weight: bold; font-size: 20px;"><I>ABOUT</I> </span></a></li>
+        <!-- <li><a href="reveiw.html">Reviews</a></li> -->
+        <li><a href="contact.html"><span style="font-weight: bold; font-size: 20px;"><I>CONTACT</I> </span></a></li>
+        <li><a href="claim.html"><span style="font-weight: bold; font-size: 20px;"><I>CLAIM-SUPPORT</I> </span></a></li>
+        <li><a href="Get_jobs.html"><span style="font-weight: bold; font-size: 20px;"><I>GET-JOBS</I> </span></a></li>
       </ul>
     </nav>
 
-    <button class="nav-btn">Get Started</button>
+    <!-- <button class="nav-btn">Get Started</button>
     <div class="mobile-menu" id="menuBtn">☰</div>
-  </div>
+  </div> -->
 </header>
 
   <!-- HERO -->

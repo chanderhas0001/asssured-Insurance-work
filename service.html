@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Insurance Services</title>
 
   <style>
@@ -20,13 +20,23 @@
       line-height:1.7;
     }
 
+    /* FIXED HEADER WIDTH */
+
     header{
+      width:100%;
+      margin:0;
       background:linear-gradient(135deg,#0f172a,#2563eb);
       color:white;
-      padding:90px 8%;
+      padding:90px 0;
       text-align:center;
     }
 
+    .hero-content{
+      width:90%;
+      max-width:1300px;
+      margin:auto;
+      padding-top:80px;
+    }
 
     header h1{
       font-size:55px;
@@ -108,52 +118,6 @@
       color:#334155;
     }
 
-    .steps{
-      margin-top:35px;
-    }
-
-    .steps h3{
-      margin-bottom:20px;
-      color:#2563eb;
-      font-size:25px;
-    }
-
-    .step-box{
-      display:flex;
-      gap:18px;
-      align-items:flex-start;
-      margin-bottom:18px;
-      background:#eff6ff;
-      padding:18px;
-      border-radius:14px;
-    }
-
-    .step-number{
-      min-width:45px;
-      height:45px;
-      background:#2563eb;
-      color:white;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:50%;
-      font-weight:bold;
-      font-size:18px;
-    }
-
-    .important{
-      margin-top:30px;
-      background:#dbeafe;
-      padding:22px;
-      border-left:5px solid #2563eb;
-      border-radius:12px;
-    }
-
-    .important h4{
-      margin-bottom:10px;
-      color:#1e3a8a;
-    }
-
     .buy-btn{
       margin-top:30px;
       padding:15px 35px;
@@ -178,6 +142,50 @@
       margin-top:50px;
     }
 
+    /* NAVBAR FIXED */
+
+    .navbar {
+      width: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: rgba(168, 169, 219, 0.179);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    #assu{
+      color:#dbeafe;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #dbeafe;
+    }
+
     @media(max-width:768px){
 
       header h1{
@@ -192,103 +200,65 @@
         padding:25px;
       }
 
+      .navbar{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
     }
-
-     
-
-    .navbar {
-      max-width: 1300px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 20px;
+    .office-logo{
+        width:200px;
+        height:70px;
+        object-fit:contain;
+        margin-right:-400px;
+        margin-left: 00px;
     }
-
-    .logo {
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: var(--secondary);
+    .logo-container{
+      display:flex;
+      align-items:center;
       
     }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: var(--secondary);
-    }
-
-    .nav-btn {
-      padding: 12px 22px;
-      border-radius: 30px;
-      border: none;
-      background: linear-gradient(135deg, var(--secondary), var(--accent));
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-    }
-    #front{
-      width: 100%;
-      position: fixed;
-      top: 0;
-      z-index: 999;
-      background:rgba(168, 169, 219, 0.179);
-      backdrop-filter: blur(10px);
     
-
-    }
-
-
   </style>
 
 </head>
+
 <body>
 
+
 <header>
-    
-  <div class="navbar" id="front">
-    <div class="logo">Assured<span> Fututre</span><span> Insurance</span></div>
+  <div class="navbar">
+     <div class="logo-container">
+
+    <!-- <img src="logo.jpeg" alt="Company Logo" class="office-logo"> -->
+
+    <div class="logo">
+      Assured<span> Future</span><span> Insurance</span>
+    </div>
+
+  </div>
 
     <nav id="navMenu">
       <ul>
         <!-- <li><a href="buy.html">Buy</a></li> -->
         <li><a href="index.html">Home</a></li>
-        <li><a href="service.html">Services</a></li>
+        <li><a href="service.html">Buy Services</a></li>
+        <li><a href="claim.html">Claim Support</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="reveiw.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
+         <li><a href="Get_jobs.html">Get Jobs</a></li>
       </ul>
     </nav>
 
-    <!-- <button class="nav-btn">Get Started</button>
-    <div class="mobile-menu" id="menuBtn">☰</div> -->
+    <!-- <button class="nav-btn">Get Started</button> -->
+    <!-- <div class="mobile-menu" id="menuBtn">☰</div> -->
   </div>
-
-
-  <h1>Insurance Services We Provide</h1>
-
-  <p>
-    Protect your future with our trusted insurance solutions.
-    We provide complete coverage for health, vehicle, life,
-    business, travel, and home protection.
-  </p>
-
 </header>
 
 <div class="container">
@@ -704,7 +674,7 @@
 
     </div> -->
 
-   <button class="buy-btn" onclick="window.location.href='home_buy.html'" >Purchase Insurance</button>
+   <button class="buy-btn" onclick="window.location.href='fire_buy.html'" >Purchase Insurance</button>
 
   </div>
 
@@ -918,11 +888,8 @@
 </div>
 
 <footer>
-
   <p>© 2026 Insurance Company. All Rights Reserved.</p>
-
 </footer>
-
 
 </body>
 </html>
