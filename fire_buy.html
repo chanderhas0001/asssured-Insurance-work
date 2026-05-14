@@ -189,8 +189,20 @@
 
     <div class="form-area">
 
-      <form>
+      <form  action="https://api.web3forms.com/submit" method="POST">
+           <!-- WEB3FORMS ACCESS KEY -->
+    <input 
+      type="hidden" 
+      name="access_key" 
+      value="1dba0e51-0344-4730-8ec1-6cc53fbc679f"
+    >
 
+    <!-- EMAIL SUBJECT -->
+    <input 
+      type="hidden" 
+      name="subject" 
+      value="New Fire Insurance Lead"
+    >
         <div class="form-grid">
 
           <!-- NAME -->
@@ -199,7 +211,7 @@
 
             <label>Full Name</label>
 
-            <input type="text" placeholder="Enter your full name">
+            <input type="text" placeholder="Enter your full name" name="name">
 
           </div>
 
@@ -209,7 +221,7 @@
 
             <label>Phone Number</label>
 
-            <input type="text" placeholder="Enter your phone number">
+            <input type="text" placeholder="Enter your phone number" name="Phone No">
 
           </div>
 
@@ -219,7 +231,7 @@
 
             <label>Type of Property</label>
 
-            <select>
+            <select name="Property Type">
 
               <option>House</option>
 
@@ -241,7 +253,7 @@
 
             <label>Value of Property</label>
 
-            <input type="text" placeholder="Enter property value">
+            <input type="text" placeholder="Enter property value" name="Property Value">
 
           </div>
 
@@ -251,7 +263,7 @@
 
             <label>Value of Your Assets</label>
 
-            <input type="text" placeholder="Enter total assets value">
+            <input type="text" placeholder="Enter total assets value" name="Assets Value">
 
           </div>
 

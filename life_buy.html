@@ -187,8 +187,20 @@
 
     <div class="form-area">
 
-      <form>
+      <form  action="https://api.web3forms.com/submit" method="POST">
+        <!-- WEB3FORMS ACCESS KEY -->
+    <input 
+      type="hidden" 
+      name="access_key" 
+      value="1dba0e51-0344-4730-8ec1-6cc53fbc679f"
+    >
 
+    <!-- EMAIL SUBJECT -->
+    <input 
+      type="hidden" 
+      name="subject" 
+      value="New Life Insurance Lead"
+    >
         <div class="form-grid">
 
           <!-- NAME -->
@@ -197,7 +209,7 @@
 
             <label>Full Name</label>
 
-            <input type="text" placeholder="Enter your full name">
+            <input type="text" placeholder="Enter your full name" name="name">
 
           </div>
 
@@ -207,7 +219,7 @@
 
             <label>Phone Number</label>
 
-            <input type="text" placeholder="Enter phone number">
+            <input type="text" placeholder="Enter phone number" name="Phone No">
 
           </div>
 
@@ -217,7 +229,7 @@
 
             <label>Occupation</label>
 
-            <select>
+            <select name="Occupation">
 
               <option>Salaried</option>
 
@@ -233,7 +245,7 @@
 
             <label>Smoker or Chew Tobacco?</label>
 
-            <select>
+            <select name="Smoker">
 
               <option>No</option>
 
@@ -249,7 +261,7 @@
 
             <label>Net Salary / Monthly Income</label>
 
-            <input type="text" placeholder="Enter monthly income">
+            <input type="text" placeholder="Enter monthly income" name="Net Sallary">
 
           </div>
 
@@ -259,7 +271,7 @@
 
             <label>Date of Birth</label>
 
-            <input type="date">
+            <input type="date" name="DOB">
 
           </div>
 
@@ -269,7 +281,7 @@
 
             <label>Pincode</label>
 
-            <input type="text" placeholder="Enter pincode">
+            <input type="text" placeholder="Enter pincode" name="Pin Code">
 
           </div>
 
@@ -279,7 +291,7 @@
 
             <label>Type of Plan</label>
 
-            <select>
+            <select name="Plan Type">
 
               <option>Term Insurance</option>
 

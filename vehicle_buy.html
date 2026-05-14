@@ -194,96 +194,124 @@
     <!-- FORM -->
 
     <div class="form-area">
+<form id="insuranceForm">
 
-      <form>
+  <!-- ACCESS KEY -->
+  <input type="hidden" name="access_key" value="1dba0e51-0344-4730-8ec1-6cc53fbc679f">
 
-        <div class="form-grid">
+  <!-- SUBJECT -->
+  <input type="hidden" name="subject" value="New Vehicle Insurance Lead">
 
-          <!-- NAME -->
+  <div class="form-grid">
 
-          <div class="input-box">
+    <!-- NAME -->
+    <div class="input-box">
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+    </div>
 
-            <label>Full Name</label>
+    <!-- PHONE -->
+    <div class="input-box">
+      <label>Phone Number</label>
+      <input type="text" name="phone" required>
+    </div>
 
-            <input type="text" placeholder="Enter your full name">
+    <!-- VEHICLE NUMBER -->
+    <div class="input-box full">
+      <label>Vehicle Registration Number</label>
+      <input type="text" name="vehicle_number" required>
+    </div>
 
-          </div>
+    <!-- INSURANCE TYPE -->
+    <div class="input-box full">
+      <label>Type of Insurance</label>
+      <select name="insurance_type" required>
+        <option>Comprehensive Insurance</option>
+        <option>Third Party Insurance</option>
+        <option>SAOD Insurance</option>
+      </select>
+    </div>
 
-          <!-- PHONE -->
+    <!-- RC FILE -->
+    <div class="input-box full">
+      <label>Upload RC Photo / PDF</label>
+      <input type="file" id="rc_file" accept="image/*,.pdf" required>
+      <input type="hidden" name="rc_url" id="rc_url">
+    </div>
 
-          <div class="input-box">
+    <!-- POLICY FILE -->
+    <div class="input-box full">
+      <label>Upload Previous Policy</label>
+      <input type="file" id="policy_file" accept="image/*,.pdf">
+      <input type="hidden" name="policy_url" id="policy_url">
+    </div>
 
-            <label>Phone Number</label>
-
-            <input type="text" placeholder="Enter phone number">
-
-          </div>
-
-          <!-- VEHICLE NUMBER -->
-
-          <div class="input-box full">
-
-            <label>Vehicle Registration Number</label>
-
-            <input type="text" placeholder="Example: DL01AB1234">
-
-          </div>
-
-          <!-- INSURANCE TYPE -->
-
-          <div class="input-box full">
-
-            <label>Type of Insurance</label>
-
-            <select>
-
-              <option>Comprehensive Insurance</option>
-
-              <option>Third Party Insurance</option>
-
-              <option>SAOD Insurance</option>
-
-            </select>
-
-          </div>
-
-          <!-- RC PHOTO -->
-
-          <div class="input-box full">
-
-            <label>Upload RC Photo</label>
-
-            <input type="file" class="file-upload">
-
-          </div>
-
-          <!-- PYP -->
-
-          <div class="input-box full">
-
-            <label>Upload Previous Year Policy (PYP)</label>
-
-            <input type="file" class="file-upload">
-
-          </div>
-
-          <!-- SUBMIT -->
-
-          <div class="input-box full">
-
-            <button class="submit-btn">
-              Submit Vehicle Details
-            </button>
-
-          </div>
-
-        </div>
-
-      </form>
-
+    <!-- SUBMIT -->
+    <div class="input-box full">
+      <button type="submit" class="submit-btn">Submit Vehicle Details</button>
     </div>
 
   </div>
+
+</form>
+      
+    </div>
+
+  </div>
+  <script>
+const cloudName = "YOUR_CLOUD_NAME";
+const uploadPreset = "YOUR_UPLOAD_PRESET";
+
+// upload function
+async function uploadFile(file) {
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", uploadPreset);
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
+    {
+      method: "POST",
+      body: formData
+    }
+  );
+
+  return await res.json();
+}
+
+// RC file upload
+document.getElementById("rc_file").addEventListener("change", async function(e) {
+  const data = await uploadFile(e.target.files[0]);
+  document.getElementById("rc_url").value = data.secure_url;
+});
+
+// Policy file upload
+document.getElementById("policy_file").addEventListener("change", async function(e) {
+  const data = await uploadFile(e.target.files[0]);
+  document.getElementById("policy_url").value = data.secure_url;
+});
+
+// form submit
+document.getElementById("insuranceForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  });
+
+  const result = await res.json();
+
+  if(result.success) {
+    alert("Form submitted successfully!");
+    this.reset();
+  } else {
+    alert("Error submitting form!");
+  }
+});
+</script>
 
 </body>
 

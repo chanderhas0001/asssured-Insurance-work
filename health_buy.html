@@ -187,43 +187,55 @@
 
     <div class="form-area">
 
-      <form>
+      <form  action="https://api.web3forms.com/submit" method="POST">
+         <!-- WEB3FORMS ACCESS KEY -->
+      <input 
+      type="hidden" 
+      name="access_key" 
+      value="1dba0e51-0344-4730-8ec1-6cc53fbc679f"
+    >
 
+    <!-- EMAIL SUBJECT -->
+    <input 
+      type="hidden" 
+      name="subject" 
+      value="New Helath Insurance Lead"
+    >
         <div class="form-grid">
 
           <div class="input-box">
             <label>Full Name</label>
-            <input type="text" placeholder="Enter your name">
+            <input type="text" placeholder="Enter your name" name="name">
           </div>
 
           <div class="input-box">
             <label>Age</label>
-            <input type="number" placeholder="Enter age">
+            <input type="number" placeholder="Enter age" name="age">
           </div>
 
           <div class="input-box">
             <label>Number of Adults</label>
-            <input type="number" placeholder="Adults count">
+            <input type="number" placeholder="Adults count" name="adults">
           </div>
 
           <div class="input-box">
             <label>Number of Children</label>
-            <input type="number" placeholder="Children count">
+            <input type="number" placeholder="Children count" name="children">
           </div>
 
           <div class="input-box">
             <label>Phone Number</label>
-            <input type="text" placeholder="Enter phone number">
+            <input type="text" placeholder="Enter phone number"name="phone">
           </div>
 
           <div class="input-box">
             <label>Pincode</label>
-            <input type="text" placeholder="Enter pincode">
+            <input type="text" placeholder="Enter pincode" name="pin code">
           </div>
 
           <div class="input-box full">
             <label>City</label>
-            <input type="text" placeholder="Enter city name">
+            <input type="text" placeholder="Enter city name" name="city">
           </div>
 
           <div class="input-box full">
